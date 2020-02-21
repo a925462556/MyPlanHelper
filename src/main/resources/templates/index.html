@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/my-custom-css.css" th:href="@{/css/my-custom-css.css}">
+  <title>计划定制页</title>
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui top segment">
+      <div class="large  centered ui header">来指定你的计划吧</div>
+    </div>
+    <form action="initPlanTable" method="post" id="init-form">
+    <div class="ui  segment">
+      <div class="ui centered header">初始化计划</div>
+      <h4 class="ui horizontal divider header"><i class="tag icon"></i> 基本设置 </h4>
+      <div class="ui segments" id="plans-init-area">
+        <div class="plan-init-each ui center aligned segment">
+          <div class="ui importance-select selection dropdown my-margin-lr">
+            <input type="hidden" name="importantLevel">
+            <i class="dropdown icon"></i>
+            <div class="default text">重要性等级</div>
+            <div class="menu">
+              <div class="item" data-value="1">一级</div>
+              <div class="item" data-value="2">二级</div>
+              <div class="item" data-value="3">三级</div>
+              <div class="item" data-value="4">四级</div>
+              <div class="item" data-value="5">五级</div>
+            </div>
+          </div>
+          <div class="ui emergency-select selection dropdown my-margin-lr">
+            <input type="hidden" name="emergencyLevel">
+            <i class="dropdown icon"></i>
+            <div class="default text">紧急性等级</div>
+            <div class="menu">
+              <div class="item" data-value="1">一级</div>
+              <div class="item" data-value="2">二级</div>
+              <div class="item" data-value="3">三级</div>
+              <div class="item" data-value="4">四级</div>
+              <div class="item" data-value="5">五级</div>
+            </div>
+          </div>
+          <div class="ui left icon input my-margin-lr">
+            <input type="text" placeholder="请输入任务名称" name="planName">
+            <i class="tag icon"></i>
+          </div>
+          <div class="ui left icon input my-margin-lr">
+            <input type="text" placeholder="请输入预估时间" name="duringTime">
+            <i class="clock icon"></i>
+          </div>
+        </div>
+        <div class="btn-area ui center aligned segment">
+          <div class="ui teal vertical animated button" tabindex="0">
+            <div class="hidden content">新增</div>
+            <div class="visible content">
+              <i class="add icon"></i>
+            </div>
+          </div>
+          <div class="init-btn ui teal vertical animated button" tabindex="0">
+            <div class="hidden content">生成</div>
+            <div class="visible content">
+              <i class="table icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+<script src="../static/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    // jq
+    $('.ui.dropdown')
+        .dropdown({
+            maxSelections: 5
+        })
+    ;
+    $('.init-btn').click(function () {
+        $('#init-form').submit();
+    })
+</script>
+</body>
+</html>

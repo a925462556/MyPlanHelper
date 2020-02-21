@@ -1,0 +1,8 @@
+# 配置thymeleaf
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev # 只需要指定后缀
+  resources:
+    static-locations: classPath:/static/
